@@ -15,8 +15,7 @@ This skill is designed for screenshot-driven competitor analysis. It is useful w
 
 - 竞品分析
 - 页面差异分析
-- 广告样式对比
-- 商详页对标
+- 样式对比
 - 基于截图输出结构化报告
 - A report-ready comparison of product UI, ad creatives, detail pages, onboarding flows, and reporting dashboards
 
