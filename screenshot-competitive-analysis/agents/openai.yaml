@@ -1,0 +1,4 @@
+interface:
+  display_name: "Screenshot Competitive Analysis"
+  short_description: "Compare screenshots and output structured competitor analysis"
+  default_prompt: "Use $screenshot-competitive-analysis to analyze uploaded screenshots, compare competitors, and produce a structured report with insights and recommendations."
