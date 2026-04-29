@@ -1,6 +1,6 @@
 # Screenshot Competitive Analysis Skill
 
-处理多张截图的竞品分析，输出七维对比表、关键洞察和策略建议。
+处理多张截图的竞品分析，默认输出可直接保存和展示的 HTML 报告，包含七维对比表、关键洞察和策略建议。
 
 This repository packages the workflow in a way that can be reused across multiple AI tools:
 
@@ -16,15 +16,17 @@ This skill is designed for screenshot-driven competitor analysis. It is useful w
 - 竞品分析
 - 页面差异分析
 - 样式对比
-- 基于截图输出结构化报告
-- A report-ready comparison of product UI, ad creatives, detail pages, onboarding flows, and reporting dashboards
+- 基于截图输出 HTML 结构化报告
+- A report-ready HTML comparison of product UI, ad creatives, detail pages, onboarding flows, and reporting dashboards
 
-The default output is a structured report with:
+The default output is a self-contained HTML report with:
 
 - 七维对比总表
 - 分维度分析
 - 关键洞察
 - 可执行策略建议
+
+Unless the user asks for another format, the generated analysis should be returned as HTML, not Markdown.
 
 ## Repository Structure
 
