@@ -1,5 +1,5 @@
 ---
-description: Analyze screenshots and produce a structured competitor analysis report
+description: Analyze screenshots and produce a structured HTML competitor analysis report
 argument-hint: [optional focus direction]
 ---
 
@@ -24,7 +24,9 @@ Task:
 
 Output:
 
+- Return only HTML unless the user explicitly asks for another format.
+- Do not wrap the answer in Markdown code fences.
 - Start with 2 to 4 high-signal conclusions.
 - Then provide a structured competitor analysis.
-- Include a concise comparison table when appropriate.
+- Include a concise HTML comparison table when appropriate.
 - End with actionable recommendations.

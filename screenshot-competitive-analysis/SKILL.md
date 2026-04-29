@@ -1,21 +1,21 @@
 ---
 name: screenshot-competitive-analysis
 description: |
-  Analyze one or more competitor screenshots and generate structured visual benchmarking reports for product UI, ad creatives, detail pages, onboarding flows, checkout journeys, and campaign assets.
+  Analyze one or more competitor screenshots and generate structured HTML visual benchmarking reports for product UI, ad creatives, detail pages, onboarding flows, checkout journeys, and campaign assets.
 
-  Use when the user provides screenshots and asks to compare products, analyze differences, benchmark features or UX, infer growth and commercialization strategies, or produce a report-ready competitor analysis from visual evidence.
+  Use when the user provides screenshots and asks to compare products, analyze differences, benchmark features or UX, infer growth and commercialization strategies, or produce a report-ready HTML competitor analysis from visual evidence.
 
   Also use when the user asks in Chinese for 竞品分析, 截图对比, 页面差异分析, 广告样式对比, 商详页对标, or 基于截图输出分析报告.
 
   Prefer this skill for screenshot-driven product analysis and side-by-side comparison. Do not use it for OCR-only extraction, simple translation, pixel-perfect QA, or implementation/code-generation tasks.
 metadata:
-  short-description: Compare screenshots and output structured competitor analysis reports
+  short-description: Compare screenshots and output structured HTML competitor analysis reports
 effort: medium
 ---
 
 # Screenshot Competitive Analysis
 
-把这份 skill 当作“基于视觉证据的竞品分析工作流”。目标不是泛泛点评截图，而是把截图中的可见事实整理成可汇报、可复用、可落地的竞品分析结论。
+把这份 skill 当作“基于视觉证据的竞品分析工作流”。目标不是泛泛点评截图，而是把截图中的可见事实整理成可汇报、可复用、可落地的 HTML 竞品分析报告。
 
 ## 适用范围
 
@@ -153,7 +153,7 @@ effort: medium
 - 明确优先级
 - 对应可落地场景
 
-如果用户没要求超长报告，默认输出“标准报告”；模板见 [report-template.md](./references/report-template.md)。
+如果用户没要求超长报告，默认输出“标准 HTML 报告”；模板见 [report-template.md](./references/report-template.md)。
 
 ## 缺信息时怎么处理
 
@@ -172,7 +172,11 @@ effort: medium
 
 ## 输出要求
 
-默认输出应包含：
+默认产出 HTML 报告。除非用户明确要求 Markdown、纯文本或 JSON，否则报告正文使用 HTML 结构。
+
+如果当前环境可以写入文件，优先把报告保存成 `.html` 文件，并在最终回复里提供可打开的预览链接或文件路径；不要在聊天里直接粘贴整段长 HTML。只有在无法写文件、无法提供链接，或用户明确要求内联 HTML 时，才直接输出 HTML 源码。
+
+默认 HTML 报告应包含：
 
 - 对比对象与场景定义
 - 关键假设与信息缺口
@@ -183,6 +187,11 @@ effort: medium
 
 输出时遵守以下规则：
 
+- 使用语义化 HTML 结构，例如 `<article>`、`<section>`、`<h1>`、`<h2>`、`<table>`、`<ul>`、`<ol>`
+- 可以内联少量 `<style>`，让报告可直接保存为 `.html` 并打开阅读
+- 表格使用 HTML `<table>`，不要使用 Markdown 表格
+- 重要结论可以使用 `<strong>`、`<mark>`、`<span class="confidence">` 等轻量标记
+- 交付页要有清晰的信息层级；不要照搬参考图样式，应根据截图证据和分析框架组织内容
 - 先结论，后展开
 - 表格尽量简洁，不要写成长段落
 - 重要判断给出依据
